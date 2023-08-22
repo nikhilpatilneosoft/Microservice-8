@@ -1,0 +1,37 @@
+server:
+  port: 8183
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: ORDER-SERVICE
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/orders/**
+          filters:
+            - AuthenticationFilter
+
+        - id: PAYMENT-SERVICE
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payments/**
+          filters:
+            - AuthenticationFilter
+
+        - id: GATEWAYSECURITY-SERVICE
+          uri: lb://GATEWAYSECURITY-SERVICE
+          predicates:
+            - Path=/auth/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8184/eureka
