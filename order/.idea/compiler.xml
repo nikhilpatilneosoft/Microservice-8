@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="payment" />
         <module name="ServiceRegistory" />
+        <module name="GatewaySecurity" />
         <module name="ApiGateway" />
         <module name="order" />
       </profile>
@@ -17,6 +18,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
+      <module name="GatewaySecurity" options="-parameters" />
       <module name="ServiceRegistory" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="payment" options="-parameters" />
