@@ -13,16 +13,6 @@ public class InterceptorHandeler implements HandlerInterceptor {
 
     private static final Logger log = LoggerFactory.getLogger(InterceptorHandeler.class);
 
-
-//    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-//        // Code to log request information before the actual handler is executed
-//        log.info("inside prehandle method");
-//        log.info("exiting prehandle method");
-//
-//        return true;
-//    }
-
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 

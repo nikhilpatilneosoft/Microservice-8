@@ -29,7 +29,7 @@ public class AuthConfig {
     {
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .antMatchers("/auth/register", "/auth/token", "/auth/validate").permitAll()
+                .antMatchers("/auth/register", "/auth/token", "/auth/validate", "/ui/dc1/services", "/actuator/health").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
