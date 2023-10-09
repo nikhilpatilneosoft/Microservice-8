@@ -12,15 +12,15 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/orders/**
-          filters:
-            - AuthenticationFilter
+#          filters:
+#            - AuthenticationFilter
 
         - id: PAYMENT-SERVICE
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payments/**
-          filters:
-            - AuthenticationFilter
+#          filters:
+#            - AuthenticationFilter
 
         - id: GATEWAYSECURITY-SERVICE
           uri: lb://GATEWAYSECURITY-SERVICE
